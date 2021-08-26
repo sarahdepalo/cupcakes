@@ -1,125 +1,131 @@
 //Fonts and font styles
 $font-color: #333;
 $grey: rgb(122, 122, 122);
-$open-sans: 'Open Sans', sans-serif;
-$permanent-marker: 'Permanent Marker', cursive;
-$ubuntu: 'Ubuntu', sans-serif;
+$open-sans: "Open Sans", sans-serif;
+$permanent-marker: "Permanent Marker", cursive;
+$ubuntu: "Ubuntu", sans-serif;
 // Theme Colors
 $pink: #ff84a8;
 $light-pink: #ffbfd2;
 $dark-pink: #ff6e9a;
 //Media Query Breakpoints
 
-body{
-    margin: 0;
-    padding: 0;
+body {
+  margin: 0;
+  padding: 0;
 
-    p, a {
-        font-family: $open-sans;
-    }
+  p, a, div {
+    font-family: $open-sans;
+  }
+
+  h2, h3, h4, h5, h6 {
+    font-family: $ubuntu;
+    color: $font-color;
+  }
 }
 
+//Nav
+
 nav {
-    margin-top: 25px;
+  margin-top: 25px;
+  display: flex;
+  font-family: $open-sans;
+  margin-bottom: 10px;
+
+  ul {
+    margin-top: 28px;
     display: flex;
-    font-family: $open-sans;
-    margin-bottom: 10px;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
 
-    ul {
-        margin-top: 28px;
-        display:flex;
-        flex-direction: row;
-        align-items: center;
-        width: 100%;
-        
-    }
+  li {
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 40px;
+    color: $font-color;
+  }
 
-    li {
-        display: inline-block;
-        text-decoration: none;
-        margin-right: 40px;
-        color: $font-color;
-    }
+  li:last-child {
+    margin-left: auto;
+  }
 
-    li:last-child {
-        margin-left: auto;
-    }
+  a {
+    text-decoration: none;
+    color: $font-color;
+  }
 
-    a {
-        text-decoration: none;
-        color: $font-color;
-    }
+  a:hover {
+    color: $grey;
+  }
 
-    a:hover {
-        color: $grey;
-    }
-
-    .logo {
-        height: 60px;
-        margin-left: 20px;
-    }
-  
+  .logo {
+    height: 60px;
+    margin-left: 20px;
+  }
 }
 
 .toggleButton {
-    position: absolute;
-    top: 0.75rem;
-    right: 1rem;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
 
-    .bar {
-        height: 3px;
-        width: 100%;
-        background-color: $pink;
-        border-radius: 10px;
-    }
+  .bar {
+    height: 3px;
+    width: 100%;
+    background-color: $pink;
+    border-radius: 10px;
+  }
+}
+.row {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
+//header
+
 header {
-    background-color: $light-pink;
-    margin: 0;
-    padding: 0;
-    height: 60vh;
-    width: 100%;
-    color: white;
+  background-color: $light-pink;
+  margin: 0;
+  padding: 0;
+  height: 60vh;
+  width: 100%;
+  color: white;
 
-    h1 {
-        font-family: $permanent-marker;
-    }
+  h1 {
+    font-family: $permanent-marker;
+  }
 
-    p {
-        padding-bottom: 15px;
-        max-width: 420px;
-    }
+  p {
+    padding-bottom: 15px;
+    max-width: 420px;
+  }
 
-    .row {
-        width: 70%;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-    }
+  .col {
+    margin-top: 35px;
+    width: 70%;
+  }
 
-    .col {
-        margin-top: 35px;
-        width: 70%;
-    }
+  .col + .cupcake {
+    margin-left: 60px;
+  }
 
-    .col + .cupcake {
-        margin-left: 60px;
-    }
+  .cupcake > img {
+    display: block;
+    margin: 0 auto;
+  }
 
-    .cupcake > img {
-        display: block;
-        margin: 0 auto;
-    }
-
-    .primaryBtn:hover {
-        background-color:$dark-pink;
-    }
+  .primaryBtn:hover {
+    background-color: $dark-pink;
+  }
 }
 
 .cupcake img {
@@ -127,135 +133,214 @@ header {
 }
 
 .wave {
-    background-image: url('./images/pinkwave.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 50vh;
-    width: 100%;
-    margin-top: -10px;
+  background-image: url("./images/pinkwave.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  width: 100%;
+  margin-top: -10px;
 }
 
-.primaryBtn {
-    background-color: $pink;
+//Main
+
+main {
+  margin-top: -20px;
+  width: 90%;
+  height: 70vh;
+
+  h3 {
+      color: white;
+      font-family: $open-sans;
+  }
+
+  p {
+      padding-bottom: 10px;
+  }
+
+  .row {
+      width: 100%;
+      margin-bottom: 50px;
+      justify-content:center;
+  }
+
+  .textCol {
+      width: 400px;
+  }
+
+  .imageCol {
+      width: 900px;
+  }
+
+}
+
+.imageRow {
+    display:flex;
+
+    .imageContainer {
+        margin-right: 15px;
+    }
+}
+
+//hoverboxes
+.hoverImage {
+  opacity: 1;
+  display: block;
+  width: auto;
+  height: 400px;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+
+.imageContainer {
+    position: relative;
+    margin: 0 auto;
+    background-color:black;
+    border: 0;
+}
+
+.hoverContent {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  width: 200px;
+}
+
+.hoverText {
     color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    letter-spacing:1.5px;
-    box-shadow: 0px 8px 15px #f59eb8;
+  }
+  
+  .imageContainer:hover .hoverImage {
+    opacity: 0.5;
+  }
+  
+  .imageContainer:hover .hoverContent {
+    opacity: 1;
+  }
+
+// Buttons
+
+.primaryBtn {
+  background-color: $pink;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  box-shadow: 0px 8px 15px #f59eb8;
 }
 
 .primaryBtn:hover {
-    background-color: $light-pink;
+  background-color: $light-pink;
 }
 
 //Mobile
 
 @media screen and (max-width: 960px) {
-    .toggleButton {
-        display: flex;
-        margin-top: 32px;
+  .toggleButton {
+    display: flex;
+    margin-top: 32px;
+  }
+
+  nav {
+    flex-direction: column;
+    margin-top: 20px;
+
+    .logo {
+      width: 250px;
+      margin-left: 8px;
     }
 
-    nav {
-        flex-direction: column;
-        margin-top: 20px;
-
-        .logo {
-            width: 250px;
-            margin-left: 8px;
-        }
-
-        ul {
-            flex-direction: column;
-            display:none;
-            width: auto;
-        }
-
-        li {
-            text-align: center;
-            padding:2px;
-        }
-
-        .active {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            margin-top: 30px;
-            margin-left: -30px;
-      
-        }
-
-        li:last-child  {
-            margin-left:0;
-        }
+    ul {
+      flex-direction: column;
+      display: none;
+      width: auto;
     }
 
-    .wave {
-        width: auto;
+    li {
+      text-align: center;
+      padding: 2px;
     }
 
-    .col + .cupcake {
-        display: none;
-      }
+    .active {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 30px;
+      margin-left: -30px;
+    }
 
-    header {
-          .col {
-              margin-top: 5px;
-          }
+    li:last-child {
+      margin-left: 0;
+    }
+  }
 
-          p {
-              width: auto;
-          }
-          .row {
-              width: 90%;
-          }
-      }
-      
+  .wave {
+    width: auto;
+  }
 
+  .col + .cupcake {
+    display: none;
+  }
+
+  header {
+    .col {
+      margin-top: 5px;
+    }
+
+    p {
+      width: auto;
+    }
+    .row {
+      width: 90%;
+    }
+  }
 }
 //iPad
 @media only screen and (min-device-width: 768px) and (max-device-width: 1124px) {
-    header {
-        .col + .cupcake {
-            display: block;
-          }
+  header {
+    .col + .cupcake {
+      display: block;
     }
-   
+  }
 }
 
 // Galaxy Fold:
 @media screen and (max-width: 280px) {
-    nav {
-        .logo {
-            width: 200px;
-            height: 45px;
-        }
-        .toggleButton {
-            margin-top: 25px;
-        }
+  nav {
+    .logo {
+      width: 200px;
+      height: 45px;
     }
+    .toggleButton {
+      margin-top: 25px;
+    }
+  }
 
-    body {
-        font-size: .9rem;
-    }
+  body {
+    font-size: 0.9rem;
+  }
 }
 
 // Font Resizing
 
 @media (min-width: 640px) {
-    body {
-      font-size: 1rem;
-    }
+  body {
+    font-size: 1rem;
   }
-  
-  @media (min-width: 960px) {
-    body {
-      font-size: 1.1rem;
-    }
+}
+
+@media (min-width: 960px) {
+  body {
+    font-size: 1.1rem;
   }
-  
-  @media (min-width: 1500px) {
-    header {
-      font-size: 1.3rem;
-    }
+}
+
+@media (min-width: 1500px) {
+  header {
+    font-size: 1.3rem;
   }
+}

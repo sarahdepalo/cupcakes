@@ -2,8 +2,12 @@ body {
   margin: 0;
   padding: 0;
 }
-body p, body a {
+body p, body a, body div {
   font-family: "Open Sans", sans-serif;
+}
+body h2, body h3, body h4, body h5, body h6 {
+  font-family: "Ubuntu", sans-serif;
+  color: #333;
 }
 
 nav {
@@ -57,6 +61,13 @@ nav .logo {
   border-radius: 10px;
 }
 
+.row {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
 header {
   background-color: #ffbfd2;
   margin: 0;
@@ -71,12 +82,6 @@ header h1 {
 header p {
   padding-bottom: 15px;
   max-width: 420px;
-}
-header .row {
-  width: 70%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
 }
 header .col {
   margin-top: 35px;
@@ -104,6 +109,77 @@ header .primaryBtn:hover {
   height: 50vh;
   width: 100%;
   margin-top: -10px;
+}
+
+main {
+  margin-top: -20px;
+  width: 90%;
+  height: 70vh;
+}
+main h3 {
+  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+main p {
+  padding-bottom: 10px;
+}
+main .row {
+  width: 100%;
+  margin-bottom: 50px;
+  justify-content: center;
+}
+main .textCol {
+  width: 400px;
+}
+main .imageCol {
+  width: 900px;
+}
+
+.imageRow {
+  display: flex;
+}
+.imageRow .imageContainer {
+  margin-right: 15px;
+}
+
+.hoverImage {
+  opacity: 1;
+  display: block;
+  width: auto;
+  height: 400px;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+
+.imageContainer {
+  position: relative;
+  margin: 0 auto;
+  background-color: black;
+  border: 0;
+}
+
+.hoverContent {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  width: 200px;
+}
+
+.hoverText {
+  color: white;
+}
+
+.imageContainer:hover .hoverImage {
+  opacity: 0.5;
+}
+
+.imageContainer:hover .hoverContent {
+  opacity: 1;
 }
 
 .primaryBtn {
