@@ -2,6 +2,9 @@ body {
   margin: 0;
   padding: 0;
 }
+body p, body a {
+  font-family: "Open Sans", sans-serif;
+}
 
 nav {
   margin-top: 25px;
@@ -37,23 +40,6 @@ nav .logo {
   margin-left: 20px;
 }
 
-header {
-  background-color: #ffbfd2;
-  margin: 0;
-  padding: 0;
-  height: 55vh;
-  width: 100%;
-}
-
-.wave {
-  background-image: url("./images/pinkwave.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 50vh;
-  width: 100%;
-  margin-top: -10px;
-}
-
 .toggleButton {
   position: absolute;
   top: 0.75rem;
@@ -71,6 +57,68 @@ header {
   border-radius: 10px;
 }
 
+header {
+  background-color: #ffbfd2;
+  margin: 0;
+  padding: 0;
+  height: 60vh;
+  width: 100%;
+  color: white;
+}
+header h1 {
+  font-family: "Permanent Marker", cursive;
+}
+header p {
+  padding-bottom: 15px;
+  max-width: 420px;
+}
+header .row {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+header .col {
+  margin-top: 35px;
+  width: 70%;
+}
+header .col + .cupcake {
+  margin-left: 60px;
+}
+header .cupcake > img {
+  display: block;
+  margin: 0 auto;
+}
+header .primaryBtn:hover {
+  background-color: #ff6e9a;
+}
+
+.cupcake img {
+  max-width: 400px;
+}
+
+.wave {
+  background-image: url("./images/pinkwave.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  width: 100%;
+  margin-top: -10px;
+}
+
+.primaryBtn {
+  background-color: #ff84a8;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  box-shadow: 0px 8px 15px #f59eb8;
+}
+
+.primaryBtn:hover {
+  background-color: #ffbfd2;
+}
+
 @media screen and (max-width: 960px) {
   .toggleButton {
     display: flex;
@@ -82,8 +130,8 @@ header {
     margin-top: 20px;
   }
   nav .logo {
-    width: 280px;
-    margin-left: 0px;
+    width: 250px;
+    margin-left: 8px;
   }
   nav ul {
     flex-direction: column;
@@ -107,6 +155,53 @@ header {
 
   .wave {
     width: auto;
+  }
+
+  .col + .cupcake {
+    display: none;
+  }
+
+  header .col {
+    margin-top: 5px;
+  }
+  header p {
+    width: auto;
+  }
+  header .row {
+    width: 90%;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1124px) {
+  header .col + .cupcake {
+    display: block;
+  }
+}
+@media screen and (max-width: 280px) {
+  nav .logo {
+    width: 200px;
+    height: 45px;
+  }
+  nav .toggleButton {
+    margin-top: 25px;
+  }
+
+  body {
+    font-size: 0.9rem;
+  }
+}
+@media (min-width: 640px) {
+  body {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 960px) {
+  body {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 1500px) {
+  header {
+    font-size: 1.3rem;
   }
 }
 

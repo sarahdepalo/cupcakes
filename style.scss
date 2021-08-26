@@ -7,11 +7,16 @@ $ubuntu: 'Ubuntu', sans-serif;
 // Theme Colors
 $pink: #ff84a8;
 $light-pink: #ffbfd2;
+$dark-pink: #ff6e9a;
 //Media Query Breakpoints
 
 body{
     margin: 0;
     padding: 0;
+
+    p, a {
+        font-family: $open-sans;
+    }
 }
 
 nav {
@@ -56,22 +61,6 @@ nav {
   
 }
 
-header {
-    background-color: $light-pink;
-    margin: 0;
-    padding: 0;
-    height: 55vh;
-    width: 100%
-}
-
-.wave {
-    background-image: url('./images/pinkwave.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 50vh;
-    width: 100%;
-    margin-top: -10px;
-}
 .toggleButton {
     position: absolute;
     top: 0.75rem;
@@ -90,6 +79,76 @@ header {
     }
 }
 
+header {
+    background-color: $light-pink;
+    margin: 0;
+    padding: 0;
+    height: 60vh;
+    width: 100%;
+    color: white;
+
+    h1 {
+        font-family: $permanent-marker;
+    }
+
+    p {
+        padding-bottom: 15px;
+        max-width: 420px;
+    }
+
+    .row {
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .col {
+        margin-top: 35px;
+        width: 70%;
+    }
+
+    .col + .cupcake {
+        margin-left: 60px;
+    }
+
+    .cupcake > img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .primaryBtn:hover {
+        background-color:$dark-pink;
+    }
+}
+
+.cupcake img {
+  max-width: 400px;
+}
+
+.wave {
+    background-image: url('./images/pinkwave.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+    width: 100%;
+    margin-top: -10px;
+}
+
+.primaryBtn {
+    background-color: $pink;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    letter-spacing:1.5px;
+    box-shadow: 0px 8px 15px #f59eb8;
+}
+
+.primaryBtn:hover {
+    background-color: $light-pink;
+}
+
+//Mobile
 
 @media screen and (max-width: 960px) {
     .toggleButton {
@@ -102,8 +161,8 @@ header {
         margin-top: 20px;
 
         .logo {
-            width: 280px;
-            margin-left: 0px;
+            width: 250px;
+            margin-left: 8px;
         }
 
         ul {
@@ -135,4 +194,68 @@ header {
         width: auto;
     }
 
+    .col + .cupcake {
+        display: none;
+      }
+
+    header {
+          .col {
+              margin-top: 5px;
+          }
+
+          p {
+              width: auto;
+          }
+          .row {
+              width: 90%;
+          }
+      }
+      
+
 }
+//iPad
+@media only screen and (min-device-width: 768px) and (max-device-width: 1124px) {
+    header {
+        .col + .cupcake {
+            display: block;
+          }
+    }
+   
+}
+
+// Galaxy Fold:
+@media screen and (max-width: 280px) {
+    nav {
+        .logo {
+            width: 200px;
+            height: 45px;
+        }
+        .toggleButton {
+            margin-top: 25px;
+        }
+    }
+
+    body {
+        font-size: .9rem;
+    }
+}
+
+// Font Resizing
+
+@media (min-width: 640px) {
+    body {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (min-width: 960px) {
+    body {
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (min-width: 1500px) {
+    header {
+      font-size: 1.3rem;
+    }
+  }
