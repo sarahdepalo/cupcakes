@@ -8,7 +8,10 @@ $ubuntu: "Ubuntu", sans-serif;
 $pink: #ff84a8;
 $light-pink: #ffbfd2;
 $dark-pink: #ff6e9a;
-//Media Query Breakpoints
+
+*, *:before, *:after {
+  box-sizing:border-box;
+} 
 
 body {
   margin: 0;
@@ -16,7 +19,7 @@ body {
 
   p,
   a,
-  div {
+  div, label, input, button, textarea {
     font-family: $open-sans;
   }
 
@@ -27,6 +30,10 @@ body {
   h6 {
     font-family: $ubuntu;
     color: $font-color;
+  }
+
+  button {
+    border: none;
   }
 }
 
@@ -231,6 +238,8 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0 auto;
+  margin-bottom: 80px;
+
   h2 {
     font-size: 50px;
     color: white;
@@ -241,6 +250,59 @@ header {
     align-items: center;
     padding-top: 90px;
   }
+}
+
+//Contact Container 
+.contactContainer {
+  margin-bottom: 80px;
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 450px;
+    box-shadow: 12px 12px 2px 1px $light-pink;
+  }
+
+  .row {
+    width: 80%;
+  }
+
+  .col {
+    margin: 0 auto;
+  }
+}
+
+//Form Elements
+input, textarea {
+  padding: 8px;
+  margin: 10px 0px;
+  border: 1px solid rgb(180, 180, 180);
+  border-radius: 5px;
+  width: 200px; 
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.03);
+}
+
+label {
+  display: block;
+}
+
+.nameAndEmail {
+  display: flex;
+
+  input {
+    display: block;
+  }
+
+  div:first-child {
+    padding-right: 5px;
+  }
+}
+
+textarea {
+  width: 405px;
+}
+
+form button {
+  display: block;
 }
 
 // Buttons
@@ -340,7 +402,36 @@ header {
     }
   }
 
-  //Hero Banner
+  //heroBanner 
+  .heroBanner {
+    min-height: 70vh;
+    .row {
+      padding-top: 20px;
+    }
+
+    h2 {
+      font-size:1.7em;
+    }
+  }
+
+
+  //contactContainer 
+  .contactContainer {
+    .row {
+      flex-direction: column;
+    }
+    .nameAndEmail {
+      flex-direction:column;
+    }
+
+    input, textarea {
+      width: 300px;
+    }
+
+    .col:first-child {
+      margin-bottom: 50px;
+    }
+  }
   
 }
 
@@ -369,7 +460,31 @@ header {
   body {
     font-size: 0.9rem;
   }
+
+  .contactContainer {
+    input, textarea {
+      width: 200px;
+    }
+  }
+  .introContainer {
+    .hoverImage {
+      width:209px;
+      height:300px;
+    }
+    .imageRow {
+      width: auto;
+    }
+  }
+  
 }
+@media screen and (max-width:1377px) and (min-width: 975px) {
+  .introContainer {
+    .row {
+      flex-wrap:wrap;
+    }
+  }
+}
+
 
 //iPad
 @media only screen and (min-device-width: 768px) and (max-device-width: 1124px) {
@@ -378,15 +493,78 @@ header {
       display: block;
     }
   }
-}
 
-@media screen and (max-width:1377px) and (min-width: 975px) {
   .introContainer {
-    .row {
-      flex-wrap:wrap;
+    .imageRow {
+      flex-direction: row;
+      width: auto;
+    }
+
+    .hoverImage {
+      width:auto;
+      height:300px;
+    }
+  }
+
+  .heroBanner {
+    padding-top: 40px;
+  }
+
+  .contactContainer {
+    input, textarea {
+      width: 410px;
     }
   }
 }
+
+/* PORTRAIT MODE ONLY IPAD */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+    header {
+      height: 40vh;
+    }
+
+    .wave {
+      height: 30vh;
+    }
+
+    .contactContainer img {
+      margin-left: 28px;
+    }
+
+    .heroBanner {
+      min-height: 40vh;
+    }
+}
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    header {
+      height: 40vh;
+    }
+
+    .wave {
+      height: 30vh;
+    }
+
+    .contactContainer img {
+      margin-left: 28px;
+    }
+
+    .heroBanner {
+      min-height: 40vh;
+    }
+
+    .contactContainer {
+      input, textarea {
+        width: auto;
+      }
+    }
+}
+
+
 
 // Font Resizing
 

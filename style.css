@@ -1,10 +1,14 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
 }
 body p,
 body a,
-body div {
+body div, body label, body input, body button, body textarea {
   font-family: "Open Sans", sans-serif;
 }
 body h2,
@@ -14,6 +18,9 @@ body h5,
 body h6 {
   font-family: "Ubuntu", sans-serif;
   color: #333;
+}
+body button {
+  border: none;
 }
 
 nav {
@@ -192,6 +199,7 @@ header .primaryBtn:hover {
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0 auto;
+  margin-bottom: 80px;
 }
 .heroBanner h2 {
   font-size: 50px;
@@ -202,6 +210,53 @@ header .primaryBtn:hover {
   text-align: center;
   align-items: center;
   padding-top: 90px;
+}
+
+.contactContainer {
+  margin-bottom: 80px;
+}
+.contactContainer img {
+  width: 100%;
+  height: auto;
+  max-width: 450px;
+  box-shadow: 12px 12px 2px 1px #ffbfd2;
+}
+.contactContainer .row {
+  width: 80%;
+}
+.contactContainer .col {
+  margin: 0 auto;
+}
+
+input, textarea {
+  padding: 8px;
+  margin: 10px 0px;
+  border: 1px solid #b4b4b4;
+  border-radius: 5px;
+  width: 200px;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.03);
+}
+
+label {
+  display: block;
+}
+
+.nameAndEmail {
+  display: flex;
+}
+.nameAndEmail input {
+  display: block;
+}
+.nameAndEmail div:first-child {
+  padding-right: 5px;
+}
+
+textarea {
+  width: 405px;
+}
+
+form button {
+  display: block;
 }
 
 .primaryBtn {
@@ -285,6 +340,29 @@ header .primaryBtn:hover {
   .introContainer .col3 {
     margin-top: 10px;
   }
+
+  .heroBanner {
+    min-height: 70vh;
+  }
+  .heroBanner .row {
+    padding-top: 20px;
+  }
+  .heroBanner h2 {
+    font-size: 1.7em;
+  }
+
+  .contactContainer .row {
+    flex-direction: column;
+  }
+  .contactContainer .nameAndEmail {
+    flex-direction: column;
+  }
+  .contactContainer input, .contactContainer textarea {
+    width: 300px;
+  }
+  .contactContainer .col:first-child {
+    margin-bottom: 50px;
+  }
 }
 @media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
   header {
@@ -303,15 +381,84 @@ header .primaryBtn:hover {
   body {
     font-size: 0.9rem;
   }
-}
-@media only screen and (min-device-width: 768px) and (max-device-width: 1124px) {
-  header .col + .cupcake {
-    display: block;
+
+  .contactContainer input, .contactContainer textarea {
+    width: 200px;
+  }
+
+  .introContainer .hoverImage {
+    width: 209px;
+    height: 300px;
+  }
+  .introContainer .imageRow {
+    width: auto;
   }
 }
 @media screen and (max-width: 1377px) and (min-width: 975px) {
   .introContainer .row {
     flex-wrap: wrap;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1124px) {
+  header .col + .cupcake {
+    display: block;
+  }
+
+  .introContainer .imageRow {
+    flex-direction: row;
+    width: auto;
+  }
+  .introContainer .hoverImage {
+    width: auto;
+    height: 300px;
+  }
+
+  .heroBanner {
+    padding-top: 40px;
+  }
+
+  .contactContainer input, .contactContainer textarea {
+    width: 410px;
+  }
+}
+/* PORTRAIT MODE ONLY IPAD */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) {
+  header {
+    height: 40vh;
+  }
+
+  .wave {
+    height: 30vh;
+  }
+
+  .contactContainer img {
+    margin-left: 28px;
+  }
+
+  .heroBanner {
+    min-height: 40vh;
+  }
+}
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+  header {
+    height: 40vh;
+  }
+
+  .wave {
+    height: 30vh;
+  }
+
+  .contactContainer img {
+    margin-left: 28px;
+  }
+
+  .heroBanner {
+    min-height: 40vh;
+  }
+
+  .contactContainer input, .contactContainer textarea {
+    width: auto;
   }
 }
 @media (min-width: 640px) {
