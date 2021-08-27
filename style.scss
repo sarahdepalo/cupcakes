@@ -11,6 +11,7 @@ $dark-pink: #ff6e9a;
 
 *, *:before, *:after {
   box-sizing:border-box;
+  scroll-behavior: smooth;
 } 
 
 body {
