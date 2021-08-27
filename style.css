@@ -2,10 +2,16 @@ body {
   margin: 0;
   padding: 0;
 }
-body p, body a, body div {
+body p,
+body a,
+body div {
   font-family: "Open Sans", sans-serif;
 }
-body h2, body h3, body h4, body h5, body h6 {
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
   font-family: "Ubuntu", sans-serif;
   color: #333;
 }
@@ -111,28 +117,23 @@ header .primaryBtn:hover {
   margin-top: -10px;
 }
 
-main {
+.introContainer {
+  margin: 0 auto;
   margin-top: -20px;
-  width: 90%;
-  height: 70vh;
+  margin-bottom: 80px;
+  height: auto;
 }
-main h3 {
+.introContainer h3 {
   color: white;
   font-family: "Open Sans", sans-serif;
 }
-main p {
+.introContainer p {
   padding-bottom: 10px;
 }
-main .row {
-  width: 100%;
+.introContainer .row {
   margin-bottom: 50px;
   justify-content: center;
-}
-main .textCol {
-  width: 400px;
-}
-main .imageCol {
-  width: 900px;
+  width: 80%;
 }
 
 .imageRow {
@@ -145,7 +146,7 @@ main .imageCol {
 .hoverImage {
   opacity: 1;
   display: block;
-  width: auto;
+  width: 266px;
   height: 400px;
   transition: 0.5s ease;
   backface-visibility: hidden;
@@ -182,6 +183,27 @@ main .imageCol {
   opacity: 1;
 }
 
+.heroBanner {
+  color: white;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/cater.jpg");
+  min-height: 60vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+}
+.heroBanner h2 {
+  font-size: 50px;
+  color: white;
+}
+.heroBanner .row {
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding-top: 90px;
+}
+
 .primaryBtn {
   background-color: #ff84a8;
   color: white;
@@ -189,6 +211,7 @@ main .imageCol {
   text-decoration: none;
   letter-spacing: 1.5px;
   box-shadow: 0px 8px 15px #f59eb8;
+  text-transform: uppercase;
 }
 
 .primaryBtn:hover {
@@ -246,10 +269,26 @@ main .imageCol {
   header .row {
     width: 90%;
   }
+
+  .introContainer {
+    width: auto;
+  }
+  .introContainer .row {
+    flex-direction: column;
+  }
+  .introContainer .imageRow {
+    flex-direction: column;
+    width: 280px;
+    margin: 0 auto;
+    margin-top: -50px;
+  }
+  .introContainer .col3 {
+    margin-top: 10px;
+  }
 }
-@media only screen and (min-device-width: 768px) and (max-device-width: 1124px) {
-  header .col + .cupcake {
-    display: block;
+@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+  header {
+    height: 77vh;
   }
 }
 @media screen and (max-width: 280px) {
@@ -263,6 +302,16 @@ main .imageCol {
 
   body {
     font-size: 0.9rem;
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1124px) {
+  header .col + .cupcake {
+    display: block;
+  }
+}
+@media screen and (max-width: 1377px) and (min-width: 975px) {
+  .introContainer .row {
+    flex-wrap: wrap;
   }
 }
 @media (min-width: 640px) {

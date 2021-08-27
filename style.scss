@@ -14,11 +14,17 @@ body {
   margin: 0;
   padding: 0;
 
-  p, a, div {
+  p,
+  a,
+  div {
     font-family: $open-sans;
   }
 
-  h2, h3, h4, h5, h6 {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: $ubuntu;
     color: $font-color;
   }
@@ -141,65 +147,57 @@ header {
   margin-top: -10px;
 }
 
-//Main
+//IntroContainer
 
-main {
+.introContainer {
+  margin: 0 auto;
   margin-top: -20px;
-  width: 90%;
-  height: 70vh;
+  margin-bottom: 80px;
+  height: auto;
 
   h3 {
-      color: white;
-      font-family: $open-sans;
+    color: white;
+    font-family: $open-sans;
   }
 
   p {
-      padding-bottom: 10px;
+    padding-bottom: 10px;
   }
 
   .row {
-      width: 100%;
-      margin-bottom: 50px;
-      justify-content:center;
+    margin-bottom: 50px;
+    justify-content: center;
+    width: 80%;
   }
-
-  .textCol {
-      width: 400px;
-  }
-
-  .imageCol {
-      width: 900px;
-  }
-
 }
 
 .imageRow {
-    display:flex;
+  display: flex;
 
-    .imageContainer {
-        margin-right: 15px;
-    }
+  .imageContainer {
+    margin-right: 15px;
+  }
 }
 
 //hoverboxes
 .hoverImage {
   opacity: 1;
   display: block;
-  width: auto;
+  width: 266px;
   height: 400px;
   transition: 0.5s ease;
   backface-visibility: hidden;
 }
 
 .imageContainer {
-    position: relative;
-    margin: 0 auto;
-    background-color:black;
-    border: 0;
+  position: relative;
+  margin: 0 auto;
+  background-color: black;
+  border: 0;
 }
 
 .hoverContent {
-  transition: .5s ease;
+  transition: 0.5s ease;
   opacity: 0;
   position: absolute;
   top: 50%;
@@ -211,16 +209,39 @@ main {
 }
 
 .hoverText {
+  color: white;
+}
+
+.imageContainer:hover .hoverImage {
+  opacity: 0.5;
+}
+
+.imageContainer:hover .hoverContent {
+  opacity: 1;
+}
+
+
+//Hero Banner!
+.heroBanner {
+  color: white;
+  background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('./images/cater.jpg');
+  min-height: 60vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  h2 {
+    font-size: 50px;
     color: white;
   }
-  
-  .imageContainer:hover .hoverImage {
-    opacity: 0.5;
+  .row {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding-top: 90px;
   }
-  
-  .imageContainer:hover .hoverContent {
-    opacity: 1;
-  }
+}
 
 // Buttons
 
@@ -231,6 +252,7 @@ main {
   text-decoration: none;
   letter-spacing: 1.5px;
   box-shadow: 0px 8px 15px #f59eb8;
+  text-transform:uppercase;
 }
 
 .primaryBtn:hover {
@@ -298,13 +320,37 @@ main {
       width: 90%;
     }
   }
-}
-//iPad
-@media only screen and (min-device-width: 768px) and (max-device-width: 1124px) {
-  header {
-    .col + .cupcake {
-      display: block;
+
+  //IntroContainer
+  .introContainer {
+    width: auto;
+    .row {
+      flex-direction: column;
     }
+
+    .imageRow {
+      flex-direction: column;
+      width: 280px;
+      margin: 0 auto;
+      margin-top: -50px;
+    }
+
+    .col3 {
+      margin-top: 10px;
+    }
+  }
+
+  //Hero Banner
+  
+}
+
+//iPhone 5 only:
+@media (device-height : 568px) 
+   and (device-width : 320px) 
+   and (-webkit-min-device-pixel-ratio: 2)
+ {
+  header {
+    height: 77vh;
   }
 }
 
@@ -322,6 +368,23 @@ main {
 
   body {
     font-size: 0.9rem;
+  }
+}
+
+//iPad
+@media only screen and (min-device-width: 768px) and (max-device-width: 1124px) {
+  header {
+    .col + .cupcake {
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width:1377px) and (min-width: 975px) {
+  .introContainer {
+    .row {
+      flex-wrap:wrap;
+    }
   }
 }
 
